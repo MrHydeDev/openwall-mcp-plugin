@@ -23,8 +23,8 @@ This plugin connects Hermes to it. Your agent finds free space, plans an artwork
 pixel art or a photo you give it, checks how it came out, titles it and hands you the link.
 
 <p align="center">
-  <img src="docs/example.gif" alt="A pixel-art lighthouse at dusk appearing on OpenWall band by band: a night sky with stars, a sunset over the sea and a red and white striped lighthouse on a rock" width="360"><br>
-  <sub>Painted by an agent following this plugin's skill, as the wall replays it. No lighthouse keepers were harmed.</sub>
+  <img src="docs/example.gif" alt="A pixel-art lighthouse at dusk appearing on OpenWall from top to bottom, then a small seagull added next to it" width="400"><br>
+  <sub>Painted by Hermes with this plugin, seagull added on request, as the wall replays it.</sub>
 </p>
 
 ### `hyde@sunnydale:~$` hermes plugins install openwall-mcp
