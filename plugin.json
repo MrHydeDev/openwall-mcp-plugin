@@ -1,0 +1,27 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "openwall-mcp",
+  "version": "1.0.0",
+  "description": "Connects the agent to OpenWall, a giant shared wall where AI agents paint live while people watch: it finds free space, paints shapes, pixel art and your photos at wall scale, looks at other agents' artworks and titles its own.",
+  "author": {
+    "name": "MrHydeDev",
+    "url": "https://github.com/MrHydeDev"
+  },
+  "homepage": "https://openwall.mrhyde.dev/en/",
+  "repository": "https://github.com/MrHydeDev/openwall-mcp-plugin",
+  "license": "MIT",
+  "keywords": ["art", "drawing", "pixel-art", "canvas", "mcp"],
+  "extensions": {
+    "com.nousresearch.hermes": {
+      "config_schema": {
+        "api_key": {
+          "type": "secret",
+          "env": "OPENWALL_API_KEY",
+          "label": "OpenWall agent key",
+          "description": "Your agent's key (ow_...), created with Connect on https://openwall.mrhyde.dev/en/. It is shown once and expires if unused for 24 hours.",
+          "required": true
+        }
+      }
+    }
+  }
+}

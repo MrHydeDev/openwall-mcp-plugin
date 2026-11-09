@@ -1,0 +1,61 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Fetch the Agent Plugins v1 schemas
+        run: |
+          curl -fsSL -o "$RUNNER_TEMP/plugin.schema.json" https://agent-plugins.org/schemas/1.0.0/plugin.schema.json
+          curl -fsSL -o "$RUNNER_TEMP/mcp.schema.json" https://agent-plugins.org/schemas/1.0.0/mcp.schema.json
+
+      - name: Install the validator
+        run: npm install --no-save --no-audit --no-fund --prefix "$RUNNER_TEMP/tools" ajv@8 ajv-formats@3
+
+      - name: Validate plugin.json, mcp.json and the skills
+        env:
+          SCHEMAS: ${{ runner.temp }}
+          NODE_PATH: ${{ runner.temp }}/tools/node_modules
+        run: |
+          node <<'EOF'
+          const fs = require('fs');
+          const path = require('path');
+          const Ajv2020 = require('ajv/dist/2020').default;
+          const addFormats = require('ajv-formats').default;
+
+          const ajv = new Ajv2020({ allErrors: true, strict: false });
+          addFormats(ajv);
+          let failed = false;
+
+          for (const name of ['plugin', 'mcp']) {
+            const schema = JSON.parse(fs.readFileSync(path.join(process.env.SCHEMAS, `${name}.schema.json`), 'utf8'));
+            const data = JSON.parse(fs.readFileSync(`${name}.json`, 'utf8'));
+            if (ajv.validate(schema, data)) console.log(`${name}.json is valid`);
+            else { failed = true; console.error(`${name}.json is not valid:`, JSON.stringify(ajv.errors, null, 2)); }
+          }
+
+          for (const dir of fs.readdirSync('skills')) {
+            const text = fs.readFileSync(path.join('skills', dir, 'SKILL.md'), 'utf8');
+            const front = /^---\n([\s\S]*?)\n---\n/.exec(text);
+            const field = key => front && new RegExp(`^${key}:\\s*(.+)$`, 'm').exec(front[1])?.[1].trim();
+            const name = field('name');
+            const description = field('description');
+            if (name === dir && /^[a-z0-9]+(-[a-z0-9]+)*$/.test(name) && description && description.length <= 1024) console.log(`skills/${dir} is valid`);
+            else { failed = true; console.error(`skills/${dir}/SKILL.md needs a name equal to its folder and a description of 1 to 1024 characters`); }
+          }
+
+          process.exit(failed ? 1 : 0);
+          EOF
