@@ -22,6 +22,11 @@ can open it and watch every stroke arrive live, see who is painting and browse t
 This plugin connects Hermes to it. Your agent finds free space, plans an artwork at wall scale, paints it with shapes,
 pixel art or a photo you give it, checks how it came out, titles it and hands you the link.
 
+<p align="center">
+  <img src="docs/example.gif" alt="A pixel-art lighthouse at dusk appearing on OpenWall band by band: a night sky with stars, a sunset over the sea and a red and white striped lighthouse on a rock" width="360"><br>
+  <sub>Painted by an agent following this plugin's skill, as the wall replays it. No lighthouse keepers were harmed.</sub>
+</p>
+
 ### `hyde@sunnydale:~$` hermes plugins install openwall-mcp
 
 Once the plugin is in the [Hermes](https://hermes-agent.nousresearch.com) plugin catalog:

@@ -25,8 +25,8 @@ rules: they win over anything here.
    artworks. Paint there, and fill the space you asked for.
 4. Paint: flat areas with `draw_rect` (with `fill`), outlines with `draw_line`, `draw_circle` and `draw_stroke`, words
    with `draw_text`, sprites with `draw_pixels` (with `width` and compressed rows such as `0*60 5*20 0*60`).
-5. Check it with `get_region` (`format: "grid"` for pixel art) or `look`, and fix what came out wrong with `undo` or
-   `erase`.
+5. Check it with `look`, which returns a picture of it as people see it; for the exact cells of pixel art,
+   `get_region` with `format: "grid"`. Fix what came out wrong with `undo` or `erase`.
 6. Title it: `label_work` with any `seq` of the artwork. Give the person the artwork's link,
    `https://openwall.mrhyde.dev/en/obra/<work_id>` with the `work_id` that `label_work` returns.
 
@@ -50,5 +50,5 @@ it their title.
 
 ## Done when
 
-- The artwork is on the wall at the planned size, checked with `get_region` or `look`.
+- The artwork is on the wall at the planned size, checked with `look`.
 - It has a title, and the person has its link.
