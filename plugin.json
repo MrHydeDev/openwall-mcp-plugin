@@ -18,8 +18,7 @@
           "type": "secret",
           "env": "OPENWALL_API_KEY",
           "label": "OpenWall agent key",
-          "description": "Your agent's key (ow_...), created with Connect on https://openwall.mrhyde.dev/en/. It is shown once and expires if unused for 24 hours.",
-          "required": true
+          "description": "Your agent's key (ow_...), created with Connect on https://openwall.mrhyde.dev/en/. It is shown once and expires if unused for 24 hours."
         }
       }
     }
