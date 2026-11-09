@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="236" viewBox="0 0 760 236" role="img" aria-label="OPENWALL. hyde@sunnydale:~$ paint &quot;a lighthouse at dusk&quot;, and the agent paints it live on the wall, titles it and returns its link">
+<style>
+  text { font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "DejaVu Sans Mono", "Liberation Mono", monospace; }
+  .art { font-size: 11px; fill: url(#roller); }
+  .title { fill: #6d737d; font-size: 11px; }
+  .prompt { fill: #bbf05c; font-size: 13px; }
+  .command { fill: #eef0f3; font-size: 13px; }
+  .step { fill: #9aa1ab; font-size: 12px; }
+  .done { fill: #64dd92; font-size: 12px; font-weight: bold; }
+  .cursor { fill: #ef7fc4; font-size: 13px; animation: blink 1s steps(1) infinite; }
+  .typed { animation: type 9s infinite; }
+  .s1 { animation: s1 9s infinite; }
+  .s2 { animation: s2 9s infinite; }
+  .s3 { animation: s3 9s infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  @keyframes type { 0%, 4% { clip-path: inset(0 100% 0 0); animation-timing-function: steps(28, end); } 20%, 93% { clip-path: inset(0 0 0 0); opacity: 1; } 100% { clip-path: inset(0 0 0 0); opacity: 0; } }
+  @keyframes s1 { 0%, 27% { opacity: 0; } 30%, 93% { opacity: 1; } 100% { opacity: 0; } }
+  @keyframes s2 { 0%, 37% { opacity: 0; } 40%, 93% { opacity: 1; } 100% { opacity: 0; } }
+  @keyframes s3 { 0%, 49% { opacity: 0; } 52%, 93% { opacity: 1; } 100% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .cursor, .typed, .s1, .s2, .s3 { animation: none; } }
+</style>
+<defs>
+  <linearGradient id="roller" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#c6f26a"/><stop offset="30%" stop-color="#46cdb7"/><stop offset="55%" stop-color="#5aa3f1"/><stop offset="80%" stop-color="#a77bf0"/><stop offset="100%" stop-color="#ef7fc4"/></linearGradient>
+  <filter id="glow" x="-10%" y="-30%" width="120%" height="160%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <pattern id="scan" width="1" height="3" patternUnits="userSpaceOnUse"><rect width="1" height="1" fill="#000" opacity="0.16"/></pattern>
+  <clipPath id="window"><rect width="760" height="236" rx="10"/></clipPath>
+</defs>
+<g clip-path="url(#window)">
+<rect width="760" height="236" fill="#0b0c0e"/>
+<rect width="760" height="28" fill="#16181c"/>
+<rect y="27" width="760" height="1" fill="#2a2d33"/>
+<circle cx="20" cy="14" r="5" fill="#e0685b" opacity="0.75"/><circle cx="37" cy="14" r="5" fill="#d9b25a" opacity="0.75"/><circle cx="54" cy="14" r="5" fill="#63b37a" opacity="0.75"/>
+<text class="title" x="380" y="18" text-anchor="middle">hyde@sunnydale: ~/openwall-mcp-plugin</text>
+<g filter="url(#glow)">
+  <text class="art" x="110.3" y="46.5" textLength="79.7" lengthAdjust="spacingAndGlyphs" xml:space="preserve">▄███████████▄</text>
+  <text class="art" x="110.3" y="58.0" textLength="508.8" lengthAdjust="spacingAndGlyphs" xml:space="preserve">███  ███  ███▄▄     ██████╗ ██████╗ ███████╗███╗   ██╗██╗    ██╗ █████╗ ██╗     ██╗</text>
+  <text class="art" x="110.3" y="69.5" textLength="508.8" lengthAdjust="spacingAndGlyphs" xml:space="preserve">████▄▀▀▀▄████ █    ██╔═══██╗██╔══██╗██╔════╝████╗  ██║██║    ██║██╔══██╗██║     ██║</text>
+  <text class="art" x="110.3" y="81.0" textLength="508.8" lengthAdjust="spacingAndGlyphs" xml:space="preserve"> ▀▀▀▀▀▀▀▀▀▀▀  █    ██║   ██║██████╔╝█████╗  ██╔██╗ ██║██║ █╗ ██║███████║██║     ██║</text>
+  <text class="art" x="110.3" y="92.5" textLength="508.8" lengthAdjust="spacingAndGlyphs" xml:space="preserve">       █▀▀▀▀▀▀▀    ██║   ██║██╔═══╝ ██╔══╝  ██║╚██╗██║██║███╗██║██╔══██║██║     ██║</text>
+  <text class="art" x="110.3" y="104.0" textLength="539.4" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      ███          ╚██████╔╝██║     ███████╗██║ ╚████║╚███╔███╔╝██║  ██║███████╗███████╗</text>
+  <text class="art" x="110.3" y="115.5" textLength="539.4" lengthAdjust="spacingAndGlyphs" xml:space="preserve">      ███           ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═══╝ ╚══╝╚══╝ ╚═╝  ╚═╝╚══════╝╚══════╝</text>
+</g>
+<text class="prompt" x="168" y="150" textLength="132.6" lengthAdjust="spacingAndGlyphs">hyde@sunnydale:~$</text>
+<text class="command typed" x="308.6" y="150" xml:space="preserve">paint &quot;a lighthouse at dusk&quot;</text>
+<text class="step s1" x="168" y="174" xml:space="preserve">→ find_space      a clear 1600 x 1200 px spot</text>
+<text class="step s2" x="168" y="193" xml:space="preserve">→ draw_pixels     the lighthouse, live on the wall</text>
+<text class="done s3" x="168" y="214">✓ titled, plus a link to see it on the wall</text>
+<text class="cursor s3" x="480" y="214">▌</text>
+<rect width="760" height="236" fill="url(#scan)"/>
+</g>
+<rect x="0.5" y="0.5" width="759" height="235" rx="10" fill="none" stroke="#2a2d33"/>
+</svg>
