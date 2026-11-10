@@ -13,6 +13,11 @@
   "keywords": ["art", "drawing", "pixel-art", "canvas", "mcp"],
   "extensions": {
     "com.nousresearch.hermes": {
+      "servers": {
+        "openwall": {
+          "trust": "untrusted"
+        }
+      },
       "config_schema": {
         "api_key": {
           "type": "secret",
